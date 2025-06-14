@@ -12,6 +12,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import static com.karthik.QuizzBackend.Model.Role.ADMIN;
 import static com.karthik.QuizzBackend.Model.Role.USER;
 
 @RestController
@@ -50,7 +52,7 @@ public class UsersecurityController {
     public User adminregister(@RequestBody User user)
     {
         System.out.println("entered for register.");
-        user.setRole(USER);
+        user.setRole(ADMIN);
         return userserivce.register(user);
     }
 
